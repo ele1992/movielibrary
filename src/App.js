@@ -6,31 +6,33 @@ import DiscoverMoviesPage from "./pages/DiscoverMoviesPage";
 
 function App() {
   return (
-    <div className="App">
+    <div className="navigation">
       <nav>
         <ul>
           <li>
-            <NavLink exact activeClassName="Nav" to="/">
+            <NavLink exact activeClassName="activNav" className="Nav" to="/">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName="Nav" to="/about">
+            <NavLink activeClassName="activNav" className="Nav" to="/about">
               About us
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName="Nav" to="/discover">
+            <NavLink activeClassName="activNav" className="Nav" to="/discover">
               Discover new movies!
             </NavLink>
           </li>
         </ul>
       </nav>
-      <Switch>
-        <Route path="/about" component={AboutPage} />
-        <Route path="/discover" component={DiscoverMoviesPage} />
-        <Route path="/" component={HomePage} />
-      </Switch>
+      <div className="App">
+        <Switch>
+          <Route path="/about" component={AboutPage} />
+          <Route path="/discover" component={DiscoverMoviesPage} />
+          <Route path="/" component={HomePage} />
+        </Switch>
+      </div>
     </div>
   );
 }
